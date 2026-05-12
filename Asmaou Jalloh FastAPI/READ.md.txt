@@ -1,0 +1,127 @@
+# 📚 Limkokwing Library API
+
+---
+
+## 📌 Project Description
+
+A RESTful API built with **Python FastAPI** that provides a basic digital management system for the Limkokwing University library. It allows users to search for books, borrow and return them, track overdue fines, and register new users — all with asynchronous support for concurrent access.
+
+---
+
+## 🚀 Features
+
+| Endpoint             | Method | Description                          |
+|----------------------|--------|--------------------------------------|
+| `/books`             | GET    | Search books by title, author, category |
+| `/books/{book_id}`   | GET    | Get a specific book's details        |
+| `/borrow`            | POST   | Borrow an available book             |
+| `/return`            | POST   | Return a book and calculate fines    |
+| `/overdue`           | GET    | List all overdue books with fines    |
+| `/users`             | POST   | Register a new library user          |
+
+---
+
+## 🛠️ Installation & Setup
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/YOUR_USERNAME/limkokwing-library-api.git
+cd limkokwing-library-api
+```
+
+### 2. Create a virtual environment
+```bash
+python -m venv venv
+venv\Scripts\activate        # Windows
+source venv/bin/activate     # macOS/Linux
+```
+
+### 3. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the API
+```bash
+python main.py
+```
+Or directly with uvicorn:
+```bash
+uvicorn main:app --reload
+```
+
+### 5. Open interactive API docs
+```
+http://127.0.0.1:8000/docs
+```
+
+---
+
+## 📂 Project Structure
+
+```
+limkokwing-library-api/
+│
+├── main.py            # Main FastAPI application
+├── requirements.txt   # Python dependencies
+├── README.md          # Project documentation
+└── .gitignore         # Git ignored files
+```
+
+---
+
+## 🔧 Technologies Used
+
+- **Python 3.11+**
+- **FastAPI** – modern, fast web framework
+- **Uvicorn** – ASGI server
+- **Pydantic** – data validation with type annotations
+- **asyncio** – asynchronous concurrent programming
+
+---
+
+## 📋 API Usage Examples
+
+### Search books by category
+```
+GET /books?category=Programming
+```
+
+### Borrow a book
+```json
+POST /borrow
+{
+  "user_id": 101,
+  "book_id": 2
+}
+```
+
+### Return a book
+```json
+POST /return
+{
+  "user_id": 101,
+  "book_id": 2
+}
+```
+
+---
+
+## 🎯 SDG Alignment
+
+This project aligns with **SDG 4 – Quality Education** by digitizing library services to improve access to learning resources for students and staff.
+
+---
+
+## 👤 Author
+
+- **Name:** [Your Full Name]
+- **Student ID:** [Your Student ID]
+- **Email:** [your.email@limkokwing.edu.sl]
+- **GitHub:** [https://github.com/YOUR_USERNAME](https://github.com/YOUR_USERNAME)
+
+---
+
+## 📄 License
+
+This project is open-source for educational purposes under the MIT License.
